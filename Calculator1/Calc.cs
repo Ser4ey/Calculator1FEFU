@@ -33,6 +33,11 @@ namespace Calculator1
             memory_number = 0;
         }
 
+        public void Clear_Current_Number()
+        {
+            current_number = 0;
+        }
+
         public double Read_Memory_Number()
         {
             return memory_number;
@@ -75,26 +80,9 @@ namespace Calculator1
             return current_number;
         }
 
-        public double MinusPercent(double number)
+        public double PercentFromNumber(double number, double pers)
         {
-            current_number =  current_number * (1 - number/100);
-            return current_number;
-        }
-
-        public double PlusPercent(double number)
-        {
-            current_number = current_number * (1 + number / 100);
-            return current_number;
-        }
-
-        public double MultiplyPercent(double number)
-        {
-            return number/100;
-        }
-
-        public double DividePercent(double number)
-        {
-            return number/100;
+            return (number / 100) * pers;
         }
 
         public double SquareRoot()
@@ -113,6 +101,11 @@ namespace Calculator1
                 return 0;
             }
             return 1/current_number;
+        }
+
+        public double GetCurrentDoubleNumber()
+        {
+            return current_number;
         }
 
         public string GetStringNumber()

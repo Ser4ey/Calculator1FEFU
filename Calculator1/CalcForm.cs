@@ -119,7 +119,7 @@ namespace Calculator1
         private void C_Button_Click(object sender, EventArgs e)
         {
             number_input.clear_current_number();
-            main_calculator.Clear_All_Numbers();
+            main_calculator.Clear_Current_Number();
             main_label.Text = number_input.CurrentNumber;
             wait_second_number = false;
             history_label.Text = "0";
@@ -195,6 +195,63 @@ namespace Calculator1
 
             number_input.clear_current_number();
             wait_second_number = true;
+        }
+
+        private void PercentButtonClick(Object sender, EventArgs e)
+        {
+            if (!wait_second_number)
+            {
+                main_label.Text = "0";
+                history_label.Text = "0";
+                number_input.set_current_number("0");
+                main_calculator.Clear_Current_Number();
+                return;
+            }
+            if (Double.TryParse(main_label.Text, out double price))
+            {
+                number_input.set_current_number(main_label.Text);
+            }
+            double first_number = main_calculator.GetCurrentDoubleNumber();
+            double second_number = number_input.get_double_number();
+            double second_number_pers = main_calculator.PercentFromNumber(first_number, second_number);
+            double second_number_dev_100 = second_number / 100;
+
+            double result = 0;
+            if (current_operation == "+")
+            {
+                history_label.Text += $"{second_number_pers}=";
+                result = first_number + second_number_pers;
+            }
+            else if (current_operation == "-")
+            {
+                history_label.Text += $"{second_number_pers}=";
+                result = first_number - second_number_pers;
+            }
+            else if (current_operation == "*")
+            {
+                history_label.Text += $"{second_number_dev_100}=";
+                result = first_number * second_number_dev_100;
+            }
+            else if (current_operation == "/")
+            {
+                if (second_number == 0)
+                {
+                    wait_second_number = false;
+                    main_calculator.Clear_All_Numbers();
+                    number_input.clear_current_number();
+                    main_label.Text = "Нельзя делить на 0!";
+                    history_label.Text = "0";
+                    return;
+                }
+                history_label.Text += $"{second_number_dev_100}=";
+                result = first_number * second_number_dev_100;
+            }
+
+            main_label.Text = $"{result}";
+            main_calculator.Set_Current_Number(result);
+            wait_second_number = false;
+            number_input.clear_current_number();
+            current_operation = "";
         }
 
         private void Equally_Button_Click(Object sender, EventArgs e)
