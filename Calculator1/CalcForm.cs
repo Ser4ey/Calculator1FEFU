@@ -68,7 +68,7 @@ namespace Calculator1
         {
             number_input.clear_current_number();
             main_label.Text = number_input.CurrentNumber;
-        }
+        } 
 
         private void C_Button_Click(object sender, EventArgs e)
         {

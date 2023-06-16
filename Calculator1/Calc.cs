@@ -50,8 +50,6 @@ namespace Calculator1
             return Convert.ToString(current_number);
         }
 
-        
-
     }
 
 }
