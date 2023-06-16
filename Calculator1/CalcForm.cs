@@ -96,7 +96,13 @@ namespace Calculator1
             }
             current_operation = buttonText;
 
-            number_input.set_current_number(main_label.Text);
+            /*Проверка, что в main_label.Text число*/
+            double price;
+            if (Double.TryParse(main_label.Text, out price))
+            {
+                number_input.set_current_number(main_label.Text);
+            }
+
             top_panel = number_input.CurrentNumber + $"{buttonText}";
             history_label.Text = top_panel;
 
