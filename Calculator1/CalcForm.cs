@@ -244,7 +244,7 @@ namespace Calculator1
                     return;
                 }
                 history_label.Text += $"{second_number_dev_100}=";
-                result = first_number * second_number_dev_100;
+                result = first_number / second_number_dev_100;
             }
 
             main_label.Text = $"{result}";
