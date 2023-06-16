@@ -212,6 +212,7 @@
             this.button16.TabIndex = 21;
             this.button16.Text = "1/x";
             this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.Divide_1_on_X_Button_Click);
             // 
             // button17
             // 
@@ -330,6 +331,7 @@
             this.button6.TabIndex = 11;
             this.button6.Text = "√";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.SquareRoot_Button_Click);
             // 
             // button7
             // 
@@ -389,6 +391,7 @@
             this.button5.TabIndex = 6;
             this.button5.Text = "M-";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.M_Minus_Button_Click);
             // 
             // button4
             // 
@@ -400,6 +403,7 @@
             this.button4.TabIndex = 5;
             this.button4.Text = "M+";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.M_Plus_Button_Click);
             // 
             // button3
             // 
@@ -411,6 +415,7 @@
             this.button3.TabIndex = 4;
             this.button3.Text = "MS";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.MS_Button_Click);
             // 
             // button2
             // 
@@ -422,6 +427,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "MR";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.MR_Button_Click);
             // 
             // button1
             // 
@@ -433,6 +439,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "MC";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.MC_Button_Click);
             // 
             // groupBox2
             // 

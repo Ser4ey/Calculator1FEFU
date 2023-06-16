@@ -24,6 +24,10 @@ namespace Calculator1
 
         public void add_comma()
         {
+            if (_current_number.Contains("+"))
+            {
+                return;
+            }
             if (_current_number.Contains(",")) 
             {
                 return;
@@ -44,6 +48,10 @@ namespace Calculator1
         }
         public void delete_last_character()
         {
+            if (_current_number.Contains("+"))
+            {
+                return;
+            }
             _current_number = _current_number.Substring(0, _current_number.Length - 1);
             if(_current_number == "" || _current_number == "-" || _current_number == ",")
             {
